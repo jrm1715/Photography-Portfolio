@@ -1,12 +1,15 @@
 <% include ./partials/header %>
-<h1>This is the Index page</h1>
+<div class="ui container">
+  <h1 class="ui dividing header">This is the Index page</h1>
+</div>
+<div class="ui stackable grid container">
+  <% photos.forEach(function(photo) { %>
+    <div class="stackeable four wide column">
+      <img class="ui large rounded image" src="<%=photo.image%>">
+      <h4><%=photo.title%></h4>
+    </div>
 
+  <% }); %>
+</div>
 
-<% photos.forEach(function(photo) { %>
-  <img src="<%=photo.image%>">
-  <h4><%=photo.title%></h4>
-  <p><%=photo.created%></p>
-  <p><%=photo.description%></p>
-  <p><%=photo.comments%></p>
-<% }); %>
 <% include ./partials/footer %>
