@@ -1,0 +1,12 @@
+<% include ./partials/header %>
+<h1>This is the Index page</h1>
+
+
+<% photos.forEach(function(photo) { %>
+  <img src="<%=photo.image%>">
+  <h4><%=photo.title%></h4>
+  <p><%=photo.created%></p>
+  <p><%=photo.description%></p>
+  <p><%=photo.comments%></p>
+<% }); %>
+<% include ./partials/footer %>
