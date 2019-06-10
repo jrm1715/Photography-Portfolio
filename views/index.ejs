@@ -2,11 +2,11 @@
 <div class="ui container">
   <h1 class="ui dividing header">This is the Index page</h1>
 </div>
-<div class="ui stackable grid container">
+<div id="content-container" class="ui grid stackable container centered">
   <% photos.forEach(function(photo) { %>
-    <div class="stackeable four wide column">
-      <img class="ui large rounded image" src="<%=photo.image%>">
-      <h4><%=photo.title%></h4>
+    <div class="ui card stackable four wide column">
+      <img class="ui big rounded image" src="<%=photo.image%>">
+      <h4 class="ui header content centered"><%=photo.title%></h4>
     </div>
 
   <% }); %>
