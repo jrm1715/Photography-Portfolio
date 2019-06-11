@@ -11,3 +11,18 @@
 #content-container {
   width: 100% !important;
 }
+
+.ui.dividing.header {
+  margin-left: 12%;
+  margin-right: 12%;
+
+}
+
+.ui.form {
+  width: 40%;
+  margin: auto;
+}
+
+.check.circle.outline.icon {
+  padding-left: 1em;
+}

@@ -1,14 +1,25 @@
 <% include ./partials/header %>
-<h1>This is the new page</h1>
-<form class="" action="/photos" method="POST">
-  <label>Title</label>
-  <input type="text" name="photo[title]" placeholder="title">
-  <label>Image URL</label>
-  <input type="text" name="photo[image]" placeholder="URL">
-  <label>Description</label>
-  <input type="text" name="photo[description]" placeholder="description">
-  <label>Test Comment</label>
-  <input type="text" name="photo[comments]" placeholder="test comment">
-  <input type="submit" value="Post">
+<h1 class="ui dividing header centered">Create A New Post</h1>
+
+
+<form class="ui form" action="/photos" method="POST">
+  <article class="field">
+    <label>Title</label>
+    <input type="text" name="photo[title]" placeholder="title">
+  </article>
+  <article class="field">
+    <label>Image URL</label>
+    <input type="text" name="photo[image]" placeholder="URL">
+  </article>
+  <article class="field">
+    <label>Description</label>
+    <input type="text" name="photo[description]" placeholder="description">
+  </article>
+  <article class="field">
+    <label>Test Comment</label>
+    <input type="text" name="photo[comments]" placeholder="test comment">
+  </article>
+
+  <button class="ui blue basic button" type="button" name="button">Post<i class="check circle outline icon"></i></button>
 </form>
 <% include ./partials/footer %>
