@@ -11,12 +11,23 @@
       <div class="description">
         <p><%=photos.description%></p>
       </div>
+    </div>
+    <div class="ui comments">
+      <h3 id="comments-header" class="ui dividing header">Comments</h3>
       <div class="comments">
-        <p><%=photos.comments%></p>
+        <a class="avatar">
+          <img src="#" alt="">
+        </a>
+        <div class="content">
+          <a class="author" href="#">Jason</a>
+          <div class="metadata">
+            <span class="date">Today at 10:30AM</span>
+          </div>
+          <p class="text"><%=photos.comments%></p>
+        </div>
+
       </div>
     </div>
   </div>
-
-
 </article>
 <% include ./partials/footer %>
