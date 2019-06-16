@@ -4,7 +4,9 @@
 <div id="content-container" class="ui grid stackable container centered">
   <% photos.forEach(function(photo) { %>
     <div class="ui card stackable four wide column">
-      <img class="ui big rounded image" src="<%=photo.image%>">
+      <a href="/photos/<%=photo._id%>">
+        <img class="ui big rounded image" src="<%=photo.image%>">
+       </a>
       <h4 class="ui header content centered"><%=photo.title%></h4>
     </div>
 

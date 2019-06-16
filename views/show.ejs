@@ -1,0 +1,22 @@
+<% include ./partials/header %>
+
+<h1 class="ui dividing header">This is the show page</h1>
+<article id="show-container" class="ui container">
+  <div class="ui items">
+    <div class="content ui segment">
+      <div class="ui image">
+        <h4 class="ui header centered"><%=photos.title%></h4>
+        <img class="ui massive image" src="<%= photos.image %>" alt="">
+      </div>
+      <div class="description">
+        <p><%=photos.description%></p>
+      </div>
+      <div class="comments">
+        <p><%=photos.comments%></p>
+      </div>
+    </div>
+  </div>
+
+
+</article>
+<% include ./partials/footer %>

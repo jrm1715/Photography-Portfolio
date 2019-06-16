@@ -49,6 +49,16 @@ app.post("/photos", function(req, res) {
   });
 });
 
+app.get("/photos/:id", function(req, res) {
+  Photo.findById(req.params.id, function(err, photo) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("show", {photos: photo} );
+    }
+  });
+});
+
 app.listen(3000, function() {
   console.log("Photrophy Portfolio App is running on port 3000");
 });

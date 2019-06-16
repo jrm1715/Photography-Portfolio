@@ -12,6 +12,10 @@
   width: 100% !important;
 }
 
+#show-container {
+  width: 960px;
+}
+
 .ui.dividing.header {
   margin-left: 12%;
   margin-right: 12%;
