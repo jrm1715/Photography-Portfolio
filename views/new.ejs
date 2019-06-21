@@ -1,7 +1,5 @@
 <% include ./partials/header %>
 <h1 class="ui dividing header centered">Create A New Post</h1>
-
-
 <form class="ui form" action="/photos" method="POST">
   <article class="field">
     <label>Title</label>
@@ -19,7 +17,6 @@
     <label>Test Comment</label>
     <input type="text" name="photo[comments]" placeholder="test comment">
   </article>
-
   <button class="ui blue basic button" type="button" name="button">Post<i class="check circle outline icon"></i></button>
 </form>
 <% include ./partials/footer %>

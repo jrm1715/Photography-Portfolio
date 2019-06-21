@@ -40,3 +40,15 @@
 .check.circle.outline.icon {
   padding-left: 1em;
 }
+
+.show-buttons {
+  float: right;
+}
+
+#edit-button {
+  margin-right: 1em;
+}
+
+.content.ui.segment {
+  padding: 1em 1em 3em 1em;
+}

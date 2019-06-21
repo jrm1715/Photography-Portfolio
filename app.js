@@ -1,6 +1,7 @@
 // TODO: Left off testing database
 
 let express = require("express"),
+methodOverride = require("method-override");
 mongoose    = require("mongoose"),
 bodyParser  = require("body-parser"),
 app         = express();
@@ -9,6 +10,7 @@ mongoose.connect("mongodb://localhost:27017/photrophy_portfolio", { useNewUrlPar
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(methodOverride("_method"));
 
 let photoSchema = new mongoose.Schema({
   title: String,
@@ -55,6 +57,17 @@ app.get("/photos/:id", function(req, res) {
       console.log(err);
     } else {
       res.render("show", {photos: photo} );
+    }
+  });
+});
+
+//Edit router
+app.get("/photos/:id/edit", function(req, res) {
+  Photo.findById(req.params.id, function(err, photo) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("edit", {photo: photo});
     }
   });
 });

@@ -11,6 +11,10 @@
       <div class="description">
         <p><%=photos.description%></p>
       </div>
+      <div class="buttons">
+        <button class="ui red basic button show-buttons" type="button">Delete</button>
+        <a id="edit-button" class="ui gray basic button show-buttons" href="/photos/<%=photos._id%>/edit">Edit</a>
+      </div>
     </div>
     <div class="ui comments">
       <h3 id="comments-header" class="ui dividing header">Comments</h3>
