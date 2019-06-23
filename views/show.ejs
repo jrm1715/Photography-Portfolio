@@ -5,15 +5,15 @@
   <div class="ui items">
     <div class="content ui segment">
       <div class="ui image">
-        <h4 class="ui header centered"><%=photos.title%></h4>
-        <img class="ui massive image" src="<%= photos.image %>" alt="">
+        <h4 class="ui header centered"><%=photo.title%></h4>
+        <img class="ui massive image" src="<%= photo.image %>" alt="">
       </div>
       <div class="description">
-        <p><%=photos.description%></p>
+        <p><%=photo.description%></p>
       </div>
       <div class="buttons">
         <button class="ui red basic button show-buttons" type="button">Delete</button>
-        <a id="edit-button" class="ui gray basic button show-buttons" href="/photos/<%=photos._id%>/edit">Edit</a>
+        <a id="edit-button" class="ui gray basic button show-buttons" href="/photos/<%=photo._id%>/edit">Edit</a>
       </div>
     </div>
     <div class="ui comments">
@@ -28,7 +28,7 @@
           <span class="date">Today at 5:47PM</span>
         </div>
         <div class="text">
-          <p><%=photos.comments%></p>
+          <p><%=photo.comments%></p>
         </div>
         <div class="actions">
           <a class="reply" href="#">Reply</a>

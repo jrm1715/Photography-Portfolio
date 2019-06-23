@@ -2,7 +2,7 @@
 
 <h1 class="ui dividing header">My Work</h1>
 <div id="content-container" class="ui grid stackable container centered">
-  <% photos.forEach(function(photo) { %>
+  <% photo.forEach(function(photo) { %>
     <div class="ui card stackable four wide column">
       <a href="/photos/<%=photo._id%>">
         <img class="ui big rounded image" src="<%=photo.image%>">

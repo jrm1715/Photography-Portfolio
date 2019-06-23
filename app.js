@@ -32,7 +32,7 @@ app.get("/photos", function(req, res) {
     if (err) {
       console.log(err);
     } else {
-      res.render("index", {photos: photo});
+      res.render("index", {photo: photo});
     }
   });
 });
@@ -56,7 +56,7 @@ app.get("/photos/:id", function(req, res) {
     if (err) {
       console.log(err);
     } else {
-      res.render("show", {photos: photo} );
+      res.render("show", {photo: photo} );
     }
   });
 });
