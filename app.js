@@ -1,6 +1,7 @@
 // TODO: Left off testing database
 
 let express = require("express"),
+expSanitizer = require("express-sanitizer")
 methodOverride = require("method-override");
 mongoose    = require("mongoose"),
 bodyParser  = require("body-parser"),
@@ -11,6 +12,7 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
+app.use(expSanitizer());
 
 let photoSchema = new mongoose.Schema({
   title: String,
@@ -42,6 +44,7 @@ app.get("/photos/new", function(req, res) {
 });
 
 app.post("/photos", function(req, res) {
+  req.body.photo.body = req.sanitize(req.body.photo.body);
   Photo.create(req.body.photo, function(err, newPost) {
     if (err) {
       res.render("new");
@@ -63,11 +66,32 @@ app.get("/photos/:id", function(req, res) {
 
 //Edit router
 app.get("/photos/:id/edit", function(req, res) {
+  req.body.photo.body = req.sanitize(req.body.photo.body);
   Photo.findById(req.params.id, function(err, photo) {
     if (err) {
       console.log(err);
     } else {
       res.render("edit", {photo: photo});
+    }
+  });
+});
+
+app.put("/photos/:id", function(req, res) {
+  Photo.findByIdAndUpdate(req.params.id, req.body.photo, function(err, photo) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.redirect("/photos/" + req.params.id);
+    }
+  });
+});
+
+app.delete("/photos/:id", function(req, res) {
+  Photo.findByIdAndRemove(req.params.id, function(err, photo) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.redirect("/photos");
     }
   });
 });

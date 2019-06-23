@@ -12,7 +12,9 @@
         <p><%=photo.description%></p>
       </div>
       <div class="buttons">
-        <button class="ui red basic button show-buttons" type="button">Delete</button>
+        <form class="delete" action="/photos/<%= photo.id %>/?_method=DELETE" method="POST">
+          <button class="ui red basic button show-buttons" type="submit">Delete</button>
+        </form>        
         <a id="edit-button" class="ui gray basic button show-buttons" href="/photos/<%=photo._id%>/edit">Edit</a>
       </div>
     </div>
